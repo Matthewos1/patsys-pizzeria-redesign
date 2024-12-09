@@ -1,0 +1,45 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Navbar background: Patsy's green */
+.navbar {
+  background-color: #1f7a1f;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Brand text styling */
+.brand-text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+
+/* Logo as a large stamp, but keep it within the nav now */
+.logo-stamp {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Nav links */
+.navbar-dark .navbar-nav .nav-link {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #dfe6de;
+}
