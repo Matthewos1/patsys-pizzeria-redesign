@@ -43,3 +43,52 @@ body {
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #dfe6de;
 }
+
+/* Hero section */
+/* Adjust based on your navbar height. Assuming ~80px */
+.hero {
+  background-color: #1f7a1f; /* Same green as navbar */
+  height: calc(100vh - 80px); /* Full screen height minus nav */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text styling */
+.hero-text{
+    margin-bottom: 4rem;
+
+}
+.hero h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+/* Buttons */
+.hero .btn-light {
+  color: #1f7a1f;
+  background-color: #fff;
+  border: 2px solid #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero .btn-light:hover {
+  background-color: #e8e8e8;
+  color: #1f7a1f;
+}
+.hero .btn-outline-light {
+  color: #fff;
+  border: 2px solid #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero .btn-outline-light:hover {
+  background-color: #fff;
+  color: #1f7a1f;
+}
+
