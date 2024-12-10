@@ -1,5 +1,5 @@
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #fff;
@@ -9,15 +9,15 @@ body {
 /* Navbar background: Patsy's green */
 .navbar {
   background-color: #1f7a1f;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Brand text styling */
 .brand-text {
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
   font-size: 2rem;
   color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
 }
 
@@ -28,7 +28,7 @@ body {
   object-fit: cover;
   border: 3px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Nav links */
@@ -54,19 +54,18 @@ body {
 }
 
 /* Text styling */
-.hero-text{
-    margin-bottom: 4rem;
-
+.hero-text {
+  margin-bottom: 4rem;
 }
 .hero h1 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   color: #fff;
   margin-bottom: 1.5rem;
 }
 
 .hero p {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.25rem;
   color: #fff;
 }
@@ -92,3 +91,39 @@ body {
   color: #1f7a1f;
 }
 
+/* Reviewed by */
+
+.reviewed-by {
+  background-color: var(--brand-green); /* Same green as hero section */
+  color: #fff;
+  padding-top: 2rem; /* Increased padding for better spacing */
+  padding-bottom: 2rem; /* Increased padding for better spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.review-logo {
+  max-width: 100%; /* Ensures the image doesn't exceed its container */
+  max-height: 80px; /* Increased size for better visibility */
+  width: auto; /* Maintains aspect ratio */
+  height: auto; /* Maintains aspect ratio */
+  display: block;
+  margin: 0 auto; /* Centers the image */
+  object-fit: contain; /* Scales the image to fit within its container */
+  filter: drop-shadow(
+    0 1px 2px rgba(0, 0, 0, 0.2)
+  ); /* Subtle shadow for depth */
+  padding: 0; /* Remove any inherent padding */
+  transition: transform 0.3s ease;
+}
+
+.review-logo:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .review-logo {
+    max-height: 70px; /* Slightly smaller on smaller screens */
+  }
+}
