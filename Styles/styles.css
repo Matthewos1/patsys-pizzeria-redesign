@@ -1,3 +1,16 @@
+:root {
+  --brand-green: #1f7a1f;
+  --brand-dark-green: #155e15;
+  --accent-yellow: #fec208;
+  --price-gold: #ffd700;
+  --complementary-orange: #FFA500; /* Classic Bright Orange */
+  --overlay-opacity: 0.8;
+  --button-text-white: #FFFFFF;
+  --button-text-dark: #333333; /* Dark Gray for better contrast */
+}
+
+
+
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
@@ -94,11 +107,7 @@ body {
 /* Reviewed by */
 
 .reviewed-by {
-  background-color: var(--brand-green); /* Same green as hero section */
-  color: #fff;
-  padding-top: 2rem; /* Increased padding for better spacing */
-  padding-bottom: 2rem; /* Increased padding for better spacing */
-  position: relative;
+  background-color: #f8f8f8; /* Same green as hero section */
   overflow: hidden;
 }
 
@@ -114,6 +123,7 @@ body {
     0 1px 2px rgba(0, 0, 0, 0.2)
   ); /* Subtle shadow for depth */
   padding: 0; /* Remove any inherent padding */
+  opacity: 0.8;
   transition: transform 0.3s ease;
 }
 
@@ -125,5 +135,206 @@ body {
 @media (max-width: 767.98px) {
   .review-logo {
     max-height: 70px; /* Slightly smaller on smaller screens */
+  }
+}
+
+/* Featured Menu Section */
+.featured-menu {
+  /* Diagonal split: 135 degrees, green on one side, bright orange on the other */
+  background: linear-gradient(
+    135deg,
+    var(--brand-green) 50%,
+    var(--complementary-orange) 50%
+  );
+  position: relative;
+  padding: 4rem 2rem; /* Adjust as needed */
+  color: #333; /* Text color */
+}
+
+.featured-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Semi-transparent overlay for better text readability */
+
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.featured-menu .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Title */
+.featured-menu .section-title {
+  color: white; /* Updated to match the orange side */
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhances readability */
+}
+
+/* Featured Card Styling */
+.featured-card {
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(31, 122, 31, 0.3);
+}
+
+/* Featured Image Styling */
+.featured-img {
+  height: 410px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-img {
+  transform: scale(1.05);
+}
+
+/* Card Overlay Styling */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(31, 122, 31, var(--overlay-opacity));
+  color: #fff;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featured-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Typography within Cards */
+.card-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+}
+
+.card-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+}
+
+.price {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--price-gold);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+}
+
+/* Button Styling */
+.featured-menu .btn-primary {
+  background-color: var(--brand-green);
+  color: var(--button-text-white); /* Ensure white text */
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+}
+
+.featured-menu .btn-primary:hover {
+  background-color: var(--button-text-white); /* Slightly darker orange on hover */
+  color: var(--brand-green);
+}
+
+.btn-accent {
+  background-color: var(--accent-yellow);
+  color: var(--button-text-dark); /* Change text color for better contrast */
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+}
+
+.btn-accent:hover {
+  background-color: #e6b800; /* Slightly darker yellow on hover */
+  color: var(--button-text-dark); /* Maintain dark text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .featured-img {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  /* Adjust featured-menu background for smaller screens */
+  .featured-menu {
+    background: linear-gradient(
+      135deg,
+      var(--brand-green) 60%,
+      var(--complementary-orange) 60%
+    );
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .featured-img {
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 0.95rem;
+  }
+
+  /* Further adjust featured-menu background for extra small screens */
+  .featured-menu {
+    background: linear-gradient(
+      135deg,
+      var(--brand-green) 65%,
+      var(--complementary-orange) 65%
+    );
+    padding: 2rem 1rem;
   }
 }
