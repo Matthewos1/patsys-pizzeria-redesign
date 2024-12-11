@@ -338,3 +338,100 @@ body {
     padding: 2rem 1rem;
   }
 }
+
+/* Locations Section */
+/* Locations Section */
+.locations-section {
+  background-color: #f8f8f8; /* Green background */
+  color: #fff; /* White text for contrast */
+}
+
+.locations-section .section-title {
+  color: var(--brand-green);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.locations-section .section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.location-details {
+  background-color: var(--complementary-orange);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.location-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.location-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.locations-section .btn-primary {
+  background-color: var(--brand-green);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease,;
+}
+
+.locations-section .btn-primary:hover {
+  background-color: #fff;
+  color: var(--brand-green);
+}
+
+/* Map Styling */
+.map-container iframe {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.map-container iframe:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .locations-section {
+    background-color: var(--complementary-orange); /* Orange background on small screens */
+  }
+
+  .locations-section .section-title::after {
+    background-color: var(--brand-green);
+  }
+
+  .location-details {
+    background-color: rgba(31, 122, 31, 0.9); /* Semi-transparent green */
+  }
+
+  .location-title {
+    color: var(--accent-yellow);
+  }
+
+  .locations-section .btn-primary {
+    background-color: var(--brand-green);
+  }
+
+  .locations-section .btn-primary:hover {
+    background-color: #155e15;
+  }
+}
