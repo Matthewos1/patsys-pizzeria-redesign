@@ -53,7 +53,7 @@
           >
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link"  href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About Us</a>
@@ -300,11 +300,11 @@
       <!-- Location Details -->
       <div class="col-md-6 mb-4 mb-md-0">
         <div class="location-details p-4 text-center text-md-start">
-          <h3 class="location-title">Downtown New York</h3>
+          <h3 class="location-title">Upper West Side of Manhattan</h3>
           <p><strong>Address:</strong> 61 W 74th Street, New York, NY 10023</p>
           <p><strong>Phone:</strong> (212) 579-3000</p>
           <p><strong>Hours:</strong> Mon-Sun: 11:30am - 10:00pm</p>
-          <a href="https://goo.gl/maps/your-map-link" target="_blank" class="btn btn-primary mt-3">View on Map</a>
+          <a href="https://maps.app.goo.gl/2gxNy4CXADzrHtpy7" target="_blank" class="btn btn-primary mt-3">View on Map</a>
         </div>
       </div>
       <!-- Location Map -->
@@ -320,6 +320,91 @@
             referrerpolicy="no-referrer-when-downgrade"
             title="Patsy's Pizzeria Location"
           ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Contact Us</h2>
+    <div class="row g-0">
+      <!-- Contact Information (Orange Side) -->
+      <div class="col-md-6 contact-info text-center p-5">
+        <h4>Get in Touch!</h4>
+        <p>
+          Whether you have a question about our menu, need assistance with a reservation, or just want to share your experience, we're here to help! Reach out to us anytime, and we'll respond as soon as possible.
+        </p>
+      </div>
+      <!-- Contact Form (Green Side) -->
+      <div class="col-md-6 contact-form-container p-5">
+        <form
+          action="https://formspree.io/f/mdkovjnn" 
+          method="POST"
+          class="contact-form"
+          id="contactForm"
+        >
+          <div class="mb-4">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="_replyto"
+              placeholder="Your Email"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="subject" class="form-label">Subject</label>
+            <input
+              type="text"
+              class="form-control"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+          <!-- Honeypot Field for Spam Prevention (Optional) -->
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <!-- Thank You Message (Hidden by Default) -->
+        <div
+          id="thankYouMessage"
+          class="thank-you-message alert alert-success mt-4"
+          style="display: none;"
+          role="alert"
+        >
+          <strong>Thank You!</strong> Your message has been sent. We'll get back to you as soon as possible.
         </div>
       </div>
     </div>
