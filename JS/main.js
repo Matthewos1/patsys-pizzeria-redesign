@@ -48,3 +48,37 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize the Bootstrap Carousel
+  var galleryCarouselElement = document.getElementById("galleryCarousel");
+  var galleryCarousel = new bootstrap.Carousel(galleryCarouselElement, {
+    interval: 3000, // Slide every 5 seconds
+    ride: "carousel",
+    pause: "hover",
+    wrap: true,
+  });
+
+  // Get references to the custom control buttons
+  var prevButton = document.getElementById("carouselPrev");
+  var nextButton = document.getElementById("carouselNext");
+
+  // Add event listeners to the custom control buttons
+  prevButton.addEventListener("click", function () {
+    galleryCarousel.prev();
+  });
+
+  nextButton.addEventListener("click", function () {
+    galleryCarousel.next();
+  });
+
+  // Initialize Lightbox for Gallery
+  var lightboxLinks = document.querySelectorAll('[data-bs-toggle="lightbox"]');
+  lightboxLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var href = this.getAttribute("href");
+      $(href).ekkoLightbox();
+    });
+  });
+});
