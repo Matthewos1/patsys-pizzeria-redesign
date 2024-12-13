@@ -17,6 +17,62 @@ body {
   color: #333;
 }
 
+/* Global btn-primary override */
+.btn-primary {
+    background-color: var(--brand-green); /* Your brand's green */
+    color: var(--button-text-white);      /* White text for contrast */
+    border-color: var(--brand-green);    /* Match border with background */
+    font-weight: 600;                     /* Slightly bolder text */
+    padding: 0.75rem 1.5rem;              /* Comfortable padding */
+    border-radius: 50px;                  /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhances text readability */
+}
+
+.btn-primary:hover {
+    background-color: #fff; /* Darker shade on hover */
+    color: var(--brand-green);            /* Maintain white text */
+    border-color: var(--brand-dark-green);      /* Match border on hover */
+}
+
+.btn-primary:focus, 
+.btn-primary:focus-visible {
+    background-color: var(--brand-dark-green) !important; /* Darker green on focus */
+    color: var(--button-text-white) !important;            /* Maintain white text */
+    border-color: var(--brand-dark-green) !important;      /* Match border on focus */
+    box-shadow: 0 0 0 0.25rem rgba(31, 122, 31, 0.5) !important; /* Custom focus shadow */
+}
+
+/* Active State */
+.btn-primary:active {
+    background-color: var(--brand-dark-green) !important; /* Darker green on active */
+    color: var(--button-text-white) !important;            /* Maintain white text */
+    border-color: var(--brand-dark-green) !important;      /* Match border on active */
+    box-shadow: none !important; /* Remove box-shadow when active */
+}
+
+/* Disabled State */
+.btn-primary:disabled, 
+.btn-primary.disabled {
+    background-color: var(--brand-green) !important; /* Ensure disabled state matches brand color */
+    color: #ffffff !important;            /* White text */
+    border-color: var(--brand-green) !important;     /* Match border */
+    opacity: 0.65;                        /* Slight transparency */
+    cursor: not-allowed;                  /* Indicate non-interactivity */
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 122, 31, 0.6); /* Semi-transparent green */
+  z-index: 2; /* Ensures it's above the video but below the content */
+}
+
 
 /* Navbar background: Patsy's green */
 .navbar {
@@ -672,4 +728,168 @@ body {
   .footer .social-icons a {
     margin-right: 0.75rem;
   }
+}
+
+/* Hero Section for About Us Page */
+/* Video Background */
+
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Our Story Section */
+.our-story {
+  background-color: #f8f8f8;
+}
+
+.our-story .section-title {
+  color: var(--brand-green);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.our-story .section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.our-story p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Our Values and Commitments Section */
+.our-values {
+  background-color: #f8f8f8;
+}
+
+.our-values .section-title {
+  color: var(--brand-green);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.our-values .section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.our-values i {
+  color: var(--brand-green);
+}
+
+.our-values h4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.our-values p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Gallery Section */
+.gallery {
+  background-color: var(--brand-green);
+}
+
+.gallery .section-title {
+  color: var(--complementary-orange);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.gallery .section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.carousel-inner .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  padding: 0 15px; /* Adjust padding as needed */
+}
+
+.carousel-item .col-lg-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Adjust carousel indicators position and appearance */
+.carousel-indicators {
+  bottom: -40px; /* Position indicators below the carousel */
+}
+
+.carousel-indicators button {
+  background-color: var(--brand-green);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: var(--accent-yellow);
+}
+
+/* Adjust carousel controls size */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 50px 50px;
+}
+
+/* Ensure images are responsive and centered */
+.carousel-item img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+
+
+/* Hero Content Positioning */
+.hero .container {
+  position: relative;
+  z-index: 3; /* Above the overlay */
 }
