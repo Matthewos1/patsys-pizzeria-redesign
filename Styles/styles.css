@@ -731,8 +731,14 @@ body {
 }
 
 /* Hero Section for About Us Page */
-/* Video Background */
 
+/* Hero Content Positioning */
+.hero .container {
+  position: relative;
+  z-index: 3; /* Above the overlay */
+}
+
+/* Video Background */
 .video-bg {
   position: absolute;
   top: 50%;
@@ -888,8 +894,139 @@ body {
 
 
 
-/* Hero Content Positioning */
-.hero .container {
-  position: relative;
-  z-index: 3; /* Above the overlay */
+
+
+
+/* Menu Categories Tabs Styles */
+.menu-categories {
+    background-color: var(--complementary-orange); /* Applying the defined orange */
+    padding: 3rem 2rem; /* Adjusted padding for spacing */
+}
+
+.menu-categories h2{
+  color: var(--brand-green);
+}
+
+.menu-categories .nav-tabs .nav-link {
+    color: #fff; /* White text for contrast on orange background */
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu-categories .nav-tabs .nav-link:hover {
+    color: var(--brand-green); /* Change to accent yellow on hover */
+}
+
+.menu-categories .nav-tabs .nav-link.active {
+    color: var(--brand-dark-green); /* Set active tab text to gold */
+}
+
+.menu-categories .tab-content {
+    margin-top: 2rem; /* Adjust as needed */
+}
+
+.menu-categories .tab-content .row  {
+    padding: 1.5rem;
+    background-color: transparent; /* White background for menu items */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-categories .tab-content .row > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item h5 {
+    font-size: 1.25rem;
+    color: var(--brand-green); /* Ensure h5 has proper color */
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+    color: var(--brand-green); /* Changing price color to brand green */
+    font-weight: bold; /* Making the price text bold for emphasis */
+}
+
+.menu-item .description {
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.menu-item ul.toppings,
+.menu-item ul.add-protein {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #000;
+}
+
+.menu-item ul.toppings li,
+.menu-item ul.add-protein li {
+    margin-bottom: 0.5rem;
+}
+
+/* Separator Line */
+.menu-item .d-flex {
+    border-bottom: 2px solid var(--brand-green); /* Green line */
+    padding-bottom: 0.75rem; /* Space below */
+    margin-bottom: 0.75rem; /* Space above */
+}
+
+/* Reservations CTA Section Styles */
+.reservations-cta {
+    background-color: var(--brand-green); /* Set to brand green */
+    color: var(--button-text-white); /* Ensure text is readable */
+
+}
+
+.reservations-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.reservations-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.reservations-cta .btn{
+  transition: all 300ms ease;
+}
+
+
+.reservations-cta .btn:hover {
+  transition: all 300ms ease;
+    background-color: var(--button-text-white);
+    color: var(--brand-green);
+    transform: scale(1.05);
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 767.98px) {
+    .menu-categories .tab-content .row > div {
+        padding: 1rem;
+    }
+
+    .reservations-cta {
+        padding: 2rem 1rem;
+    }
+
+    .menu-categories {
+        padding-bottom: 2rem; /* Reduce bottom padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-categories .tab-content .row > div {
+        padding: 0.75rem;
+    }
+
+    /* Further adjust menu section padding if needed */
+    .menu-categories {
+        padding: 2rem 1rem;
+    }
 }
