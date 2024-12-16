@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservations - Patsy's Pizzeria</title>
+  <meta
+    name="description"
+    content="Reserve your table at Patsy's Pizzeria to enjoy authentic Italian cuisine in a cozy atmosphere. Book your reservation online today!"
+  />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&family=Quicksand:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles/styles.css" />
+
+  <!-- Font Awesome -->
+  <script
+    src="https://kit.fontawesome.com/375346c538.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <!-- Header (Navbar) -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3 shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="images/logo.png"
+            alt="Patsy's Pizzeria Logo"
+            class="logo-stamp me-3"
+          />
+          <span class="brand-text">Patsy's Pizzeria</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="reservation.html">Reservations</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center position-relative">
+    <!-- Image Background -->
+    <img
+      src="images/gallery3.jpg" 
+      alt="Reserve Your Table"
+      class="img-fluid w-100"
+      style="height: 100vh; object-fit: cover;"
+    />
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Hero Content -->
+    <div
+      class="container text-center text-white position-absolute top-50 start-50 translate-middle"
+    >
+      <h1 class="display-3 fw-bold">Reserve Your Table</h1>
+      <p class="lead mb-4">Book a memorable dining experience at Patsy's Pizzeria.</p>
+      <a href="#reservationForm" class="btn btn-accent btn-lg">Make a Reservation</a>
+    </div>
+  </section>
+
+  <!-- Reservation Form Section -->
+  <section class="reservation-form py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Make a Reservation</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form id="reservationForm" action="https://formspree.io/f/manyzrga" method="POST" novalidate>
+            <!-- Honeypot Field -->
+            <div style="display: none;">
+              <label for="bot-field">Don’t fill this out if you're human:</label>
+              <input type="text" id="bot-field" name="bot-field">
+            </div>
+
+            <!-- Name Field -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name" autocomplete="name">
+              <div class="invalid-feedback">
+                Please enter your full name.
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" class="form-control" id="email" name="_replyto" required placeholder="Enter your email address" autocomplete="email">
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number *</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number" autocomplete="tel">
+              <div class="invalid-feedback">
+                Please enter your phone number.
+              </div>
+            </div>
+
+            <!-- Date Field -->
+            <div class="mb-3">
+              <label for="date" class="form-label">Date *</label>
+              <input type="date" class="form-control" id="date" name="date" required>
+              <div class="invalid-feedback">
+                Please select a date.
+              </div>
+            </div>
+
+            <!-- Time Field -->
+            <div class="mb-3">
+              <label for="time" class="form-label">Time *</label>
+              <input type="time" class="form-control" id="time" name="time" required>
+              <div class="invalid-feedback">
+                Please select a time.
+              </div>
+            </div>
+
+            <!-- Number of Guests Field -->
+            <div class="mb-3">
+              <label for="guests" class="form-label">Number of Guests *</label>
+              <input type="number" class="form-control" id="guests" name="guests" required min="1" max="20" placeholder="Enter number of guests">
+              <div class="invalid-feedback">
+                Please enter the number of guests (1-20).
+              </div>
+            </div>
+
+            <!-- Special Requests Field -->
+            <div class="mb-3">
+              <label for="requests" class="form-label">Special Requests</label>
+              <textarea class="form-control" id="requests" name="requests" rows="3" placeholder="Any special requests?"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-accent w-100">Submit Reservation</button>
+          </form>
+
+          <!-- Thank You Message -->
+          <div id="thankYouMessage" class="thank-you-message mt-3 d-none">
+            Thank you for your reservation! We'll get back to you shortly.
+          </div>
+
+          <!-- Error Message -->
+          <div id="formErrorMessage" class="alert alert-danger mt-3 d-none" role="alert">
+            There was an error submitting your reservation. Please try again.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Policies Section -->
+  <section class="reservation-policies py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Reservation Policies</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="policy-card p-4 rounded shadow-sm">
+            <h4 class="mb-3"><i class="fas fa-check-circle text-accent me-2"></i>Booking Confirmation</h4>
+            <p>
+              All reservations are subject to availability. You will receive a confirmation email upon successful booking. Please ensure your contact details are accurate.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="policy-card p-4 rounded shadow-sm">
+            <h4 class="mb-3"><i class="fas fa-exclamation-triangle text-accent me-2"></i>Cancellation Policy</h4>
+            <p>
+              Cancellations made at least 24 hours in advance will incur no charges. Late cancellations or no-shows may be subject to a fee.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="policy-card p-4 rounded shadow-sm">
+            <h4 class="mb-3"><i class="fas fa-utensils text-accent me-2"></i>Special Requests</h4>
+            <p>
+              Please let us know if you have any special dietary requirements or seating preferences. We will do our best to accommodate your needs.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="policy-card p-4 rounded shadow-sm">
+            <h4 class="mb-3"><i class="fas fa-users text-accent me-2"></i>Party Reservations</h4>
+            <p>
+              For large groups or private events, please contact us directly to discuss availability and special arrangements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Company Info -->
+          <div class="col-md-4">
+            <a href="index.html" class="d-flex align-items-center mb-3">
+              <img
+                src="images/logo.png"
+                alt="Patsy's Pizzeria Logo"
+                class="logo-stamp me-3"
+              />
+              <span class="brand-text">Patsy's Pizzeria</span>
+            </a>
+            <p class="mb-3">
+              Serving authentic Italian pizzas with fresh ingredients since
+              1985. Join us for a delightful dining experience!
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2">
+            <h5 class="mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" class="text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="text-decoration-none">About Us</a>
+              </li>
+              <li>
+                <a href="menu.html" class="text-decoration-none">Menu</a>
+              </li>
+              <li>
+                <a href="reservation.html" class="text-decoration-none"
+                  >Reservations</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-3">
+            <h5 class="mb-3">Contact Us</h5>
+            <p class="mb-1"><strong>Address:</strong></p>
+            <p>61 W 74th Street, New York, NY 10023</p>
+            <p class="mb-1"><strong>Phone:</strong></p>
+            <p>(212) 579-3000</p>
+            <p class="mb-1"><strong>Email:</strong></p>
+            <p>
+              <a
+                href="mailto:info@patsypizzaria.com"
+                class="text-decoration-none"
+              >
+                info@patsypizzaria.com
+              </a>
+            </p>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="col-md-3">
+            <h5 class="mb-3">Follow Us</h5>
+            <div class="d-flex social-icons mb-4">
+              <a
+                href="https://www.facebook.com/Patsys2ndAve/"
+                class="me-3 fs-4"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://instagram.com/patsyspizzanyc"
+                class="me-3 fs-4"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://x.com/patsyspizzanyc"
+                class="me-3 fs-4"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@PatsysPizzaQueens"
+                class="fs-4"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2024 Patsy's Pizzeria. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  <!-- Lightbox CSS (for Gallery) -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+    rel="stylesheet"
+  />
+
+  <!-- jQuery (required for Ekko Lightbox) -->
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+sJU5yExlq6GSYGSHk7tPXikynS7ogEvDeMxHvk="
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Lightbox JS (for Gallery) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="JS/main.js"></script>
+</body>
+</html>

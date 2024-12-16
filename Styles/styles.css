@@ -2,7 +2,6 @@
   --brand-green: #1f7a1f;
   --brand-dark-green: #155e15;
   --accent-yellow: #fec208;
-  --price-gold: #ffd700;
   --complementary-orange: #ffa500; /* Classic Bright Orange */
   --overlay-opacity: 0.8;
   --button-text-white: #ffffff;
@@ -109,7 +108,7 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #dfe6de;
+  color: var(--complementary-orange);
 }
 
 /* Hero section */
@@ -292,7 +291,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--price-gold);
+  color: var(--complementary-orange);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
 }
 
@@ -1029,4 +1028,172 @@ body {
     .menu-categories {
         padding: 2rem 1rem;
     }
+}
+
+/* reservations */
+.form-control:focus {
+  border-color: var(--complementary-orange);
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+.reservation-form {
+  background-color: #f8f8f8; /* Light gray background */
+}
+
+.reservation-form .section-title {
+  color: var(--brand-green);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.reservation-form .section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Reservation Form Styling */
+#reservationForm {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reservationForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+#reservationForm .form-label {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: var(--brand-green);
+}
+
+#reservationForm .form-control {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#reservationForm .form-control:focus {
+  border-color: var(--complementary-orange);
+  box-shadow: none;
+}
+
+#reservationForm .btn-accent {
+  width: 100%;
+}
+
+
+
+/* Thank You Message Styling */
+.thank-you-message {
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  padding: 1rem;
+  border: 1px solid #c3e6cb;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Error Message Styling */
+#formErrorMessage {
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* =========================
+   Reservation Policies Styles
+   ========================= */
+
+/* Reservation Policies Section */
+.reservation-policies {
+  background-color: #f8f8f8; /* Light gray background */
+}
+
+.reservation-policies .section-title {
+  color: var(--brand-green);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.reservation-policies .section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.policy-card {
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.policy-card h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: var(--brand-dark-green);
+}
+
+.policy-card h4 i {
+  color: var(--accent-yellow);
+}
+
+.policy-card p {
+  font-family: 'Quicksand', sans-serif;
+  color: #555;
+}
+
+@media (max-width: 767.98px) {
+  #reservationForm {
+    padding: 1.5rem;
+  }
+
+  .reservation-form .section-title {
+    font-size: 1.75rem;
+  }
+
+  .thank-you-message, #formErrorMessage {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .reservation-form .section-title {
+    font-size: 1.5rem;
+  }
+
+  #reservationForm {
+    padding: 1rem;
+  }
+
+  .thank-you-message, #formErrorMessage {
+    font-size: 0.9rem;
+  }
 }

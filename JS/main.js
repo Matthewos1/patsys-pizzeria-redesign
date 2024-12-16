@@ -9,68 +9,119 @@ document.addEventListener("DOMContentLoaded", function () {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  // Handle Contact Form Submission
+  // Handle Contact Form Submission (if exists)
   const contactForm = document.getElementById("contactForm");
-  const thankYouMessage = document.getElementById("thankYouMessage");
+  const thankYouMessageContact = document.getElementById(
+    "thankYouMessageContact"
+  );
 
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
 
-    const formData = new FormData(contactForm);
-    const formProps = Object.fromEntries(formData);
+      const formData = new FormData(contactForm);
+      const formProps = Object.fromEntries(formData);
 
-    fetch(contactForm.action, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-      body: JSON.stringify(formProps),
-    })
-      .then((response) => {
-        if (response.ok) {
-          contactForm.reset();
-          thankYouMessage.style.display = "block";
-          setTimeout(() => {
-            thankYouMessage.style.display = "none";
-          }, 5000); // Hide message after 5 seconds
-        } else {
-          response.json().then((data) => {
-            if (Object.hasOwn(data, "errors")) {
-              alert(data["errors"].map((error) => error["message"]).join(", "));
-            } else {
-              alert("Oops! There was a problem submitting your form");
-            }
-          });
-        }
+      fetch(contactForm.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: new URLSearchParams(formProps),
       })
-      .catch((error) => {
-        alert("Oops! There was a problem submitting your form");
-      });
-  });
-});
+        .then((response) => {
+          if (response.ok) {
+            contactForm.reset();
+            if (thankYouMessageContact) {
+              thankYouMessageContact.classList.remove("d-none");
+              thankYouMessageContact.classList.add("d-block");
+              setTimeout(() => {
+                thankYouMessageContact.classList.remove("d-block");
+                thankYouMessageContact.classList.add("d-none");
+              }, 5000); // Hide message after 5 seconds
+            }
+          } else {
+            response.json().then((data) => {
+              if (Object.hasOwn(data, "errors")) {
+                alert(
+                  data["errors"].map((error) => error["message"]).join(", ")
+                );
+              } else {
+                alert("Oops! There was a problem submitting your form");
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          alert("Oops! There was a problem submitting your form");
+        });
+    });
+  }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize the Bootstrap Carousel
-  var galleryCarouselElement = document.getElementById("galleryCarousel");
-  var galleryCarousel = new bootstrap.Carousel(galleryCarouselElement, {
-    interval: 3000, // Slide every 5 seconds
-    ride: "carousel",
-    pause: "hover",
-    wrap: true,
-  });
+  // Handle Reservation Form Submission
+  const reservationForm = document.getElementById("reservationForm");
+  const thankYouMessageReservation = document.getElementById("thankYouMessage");
+  const formErrorMessage = document.getElementById("formErrorMessage");
 
-  // Get references to the custom control buttons
-  var prevButton = document.getElementById("carouselPrev");
-  var nextButton = document.getElementById("carouselNext");
+  if (reservationForm) {
+    reservationForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
 
-  // Add event listeners to the custom control buttons
-  prevButton.addEventListener("click", function () {
-    galleryCarousel.prev();
-  });
+      const formData = new FormData(reservationForm);
+      const formProps = Object.fromEntries(formData);
 
-  nextButton.addEventListener("click", function () {
-    galleryCarousel.next();
-  });
+      // Optional: Check Honeypot Field
+      if (formProps["bot-field"]) {
+        // Detected as spam
+        alert("Spam detected. Submission ignored.");
+        return;
+      }
+
+      fetch(reservationForm.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: new URLSearchParams(formProps),
+      })
+        .then((response) => {
+          if (response.ok) {
+            reservationForm.reset();
+            if (thankYouMessageReservation) {
+              thankYouMessageReservation.classList.remove("d-none");
+              thankYouMessageReservation.classList.add("d-block");
+              setTimeout(() => {
+                thankYouMessageReservation.classList.remove("d-block");
+                thankYouMessageReservation.classList.add("d-none");
+              }, 5000); // Hide message after 5 seconds
+            }
+            if (formErrorMessage) {
+              formErrorMessage.classList.add("d-none");
+            }
+          } else {
+            response.json().then((data) => {
+              if (Object.hasOwn(data, "errors")) {
+                formErrorMessage.textContent = data["errors"]
+                  .map((error) => error["message"])
+                  .join(", ");
+                formErrorMessage.classList.remove("d-none");
+              } else {
+                formErrorMessage.textContent =
+                  "Oops! There was a problem submitting your form";
+                formErrorMessage.classList.remove("d-none");
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          if (formErrorMessage) {
+            formErrorMessage.textContent =
+              "Oops! There was a problem submitting your form";
+            formErrorMessage.classList.remove("d-none");
+          }
+        });
+    });
+  }
 
   // Initialize Lightbox for Gallery
   var lightboxLinks = document.querySelectorAll('[data-bs-toggle="lightbox"]');
@@ -81,4 +132,32 @@ document.addEventListener("DOMContentLoaded", function () {
       $(href).ekkoLightbox();
     });
   });
+
+  // Initialize Bootstrap Carousel if present
+  var galleryCarouselElement = document.getElementById("galleryCarousel");
+  if (galleryCarouselElement) {
+    var galleryCarousel = new bootstrap.Carousel(galleryCarouselElement, {
+      interval: 3000, // Slide every 3 seconds
+      ride: "carousel",
+      pause: "hover",
+      wrap: true,
+    });
+
+    // Get references to the custom control buttons
+    var prevButton = document.getElementById("carouselPrev");
+    var nextButton = document.getElementById("carouselNext");
+
+    // Add event listeners to the custom control buttons
+    if (prevButton) {
+      prevButton.addEventListener("click", function () {
+        galleryCarousel.prev();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", function () {
+        galleryCarousel.next();
+      });
+    }
+  }
 });
