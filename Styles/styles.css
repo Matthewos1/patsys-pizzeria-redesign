@@ -660,7 +660,7 @@ body {
 }
 
 /* Footer Styles */
-/* Footer Styles */
+/* Navbar background: Patsy's green */
 .footer {
   background-color: var(--complementary-orange); /* Changed to orange */
   color: #fff;
@@ -676,7 +676,7 @@ body {
   color: var(--brand-green); /* Changed to brand green on hover for contrast */
 }
 
-.footer span:hover{
+.footer span:hover {
   color: var(--brand-green);
   transition: all 0.3s ease;
 }
@@ -714,8 +714,8 @@ body {
   }
 
   .footer .col-md-4,
-  .footer .col-md-2,
-  .footer .col-md-3 {
+  .footer .col-md-3,
+  .footer .col-md-2 {
     margin-bottom: 2rem;
   }
 
@@ -741,6 +741,51 @@ body {
     margin-right: 0.75rem;
   }
 }
+
+/* Responsive Logo Sizing */
+@media (max-width: 992px) {
+  /* Medium devices (tablets, 768px and up) */
+  .footer .logo-stamp {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer .brand-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Specifically targeting iPads and similar devices */
+  .footer .logo-stamp {
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer .brand-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Small devices (phones, less than 576px) */
+  .footer .logo-stamp {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer .brand-text {
+    font-size: 1.25rem;
+  }
+}
+
+/* Optional: Adjust padding for the logo in the footer */
+.footer .navbar-brand,
+.footer .navbar-brand .logo-stamp {
+  padding: 0;
+  margin: 0;
+}
+
 
 /* Hero Section for About Us Page */
 
