@@ -1,11 +1,12 @@
+/* Global Styles */
 :root {
   --brand-green: #1f7a1f;
   --brand-dark-green: #155e15;
   --accent-yellow: #fec208;
-  --complementary-orange: #ffa500; /* Classic Bright Orange */
+  --complementary-orange: #ffa500;
   --overlay-opacity: 0.8;
   --button-text-white: #ffffff;
-  --button-text-dark: #333333; /* Dark Gray for better contrast */
+  --button-text-dark: #333333;
 }
 
 body {
@@ -16,51 +17,62 @@ body {
   color: #333;
 }
 
-/* Global btn-primary override */
 .btn-primary {
-    background-color: var(--brand-green); /* Your brand's green */
-    color: var(--button-text-white);      /* White text for contrast */
-    border-color: var(--brand-green);    /* Match border with background */
-    font-weight: 600;                     /* Slightly bolder text */
-    padding: 0.75rem 1.5rem;              /* Comfortable padding */
-    border-radius: 50px;                  /* Rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhances text readability */
+  background-color: var(--brand-green);
+  color: var(--button-text-white);
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: #fff; /* Darker shade on hover */
-    color: var(--brand-green);            /* Maintain white text */
-    border-color: var(--brand-dark-green);      /* Match border on hover */
+  background-color: #fff;
+  color: var(--brand-green);
+  border-color: var(--brand-dark-green);
 }
 
-.btn-primary:focus, 
+.btn-primary:focus,
 .btn-primary:focus-visible {
-    background-color: var(--brand-dark-green) !important; /* Darker green on focus */
-    color: var(--button-text-white) !important;            /* Maintain white text */
-    border-color: var(--brand-dark-green) !important;      /* Match border on focus */
-    box-shadow: 0 0 0 0.25rem rgba(31, 122, 31, 0.5) !important; /* Custom focus shadow */
+  background-color: var(--brand-dark-green) !important;
+  color: var(--button-text-white) !important;
+  border-color: var(--brand-dark-green) !important;
+  box-shadow: 0 0 0 0.25rem rgba(31, 122, 31, 0.5) !important;
 }
 
-/* Active State */
 .btn-primary:active {
-    background-color: var(--brand-dark-green) !important; /* Darker green on active */
-    color: var(--button-text-white) !important;            /* Maintain white text */
-    border-color: var(--brand-dark-green) !important;      /* Match border on active */
-    box-shadow: none !important; /* Remove box-shadow when active */
+  background-color: var(--brand-dark-green) !important;
+  color: var(--button-text-white) !important;
+  border-color: var(--brand-dark-green) !important;
+  box-shadow: none !important;
 }
 
-/* Disabled State */
-.btn-primary:disabled, 
+.btn-primary:disabled,
 .btn-primary.disabled {
-    background-color: var(--brand-green) !important; /* Ensure disabled state matches brand color */
-    color: #ffffff !important;            /* White text */
-    border-color: var(--brand-green) !important;     /* Match border */
-    opacity: 0.65;                        /* Slight transparency */
-    cursor: not-allowed;                  /* Indicate non-interactivity */
+  background-color: var(--brand-green) !important;
+  color: #ffffff !important;
+  border-color: var(--brand-green) !important;
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
+.btn-accent {
+  background-color: var(--accent-yellow);
+  color: var(--button-text-dark);
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
+.btn-accent:hover {
+  background-color: #e6b800;
+  color: var(--button-text-dark);
+}
 
 .overlay {
   position: absolute;
@@ -68,18 +80,17 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(31, 122, 31, 0.6); /* Semi-transparent green */
-  z-index: 2; /* Ensures it's above the video but below the content */
+  background-color: rgba(31, 122, 31, 0.6);
+  z-index: 2;
 }
 
+/* Navbar */
 
-/* Navbar background: Patsy's green */
 .navbar {
-  background-color: #1f7a1f;
+  background-color: var(--brand-green);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Brand text styling */
 .brand-text {
   font-family: "Fredoka One", cursive;
   font-size: 2rem;
@@ -88,7 +99,6 @@ body {
   white-space: nowrap;
 }
 
-/* Logo as a large stamp, but keep it within the nav now */
 .logo-stamp {
   width: 120px;
   height: 120px;
@@ -98,7 +108,6 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Nav links */
 .navbar-dark .navbar-nav .nav-link {
   font-weight: 600;
   color: #fff;
@@ -112,7 +121,6 @@ body {
 }
 
 @media (max-width: 576px) {
-  /* Small devices (phones, less than 768px) */
   .logo-stamp {
     width: 100px;
     height: 100px;
@@ -123,20 +131,36 @@ body {
   }
 }
 
-
-/* Hero section */
-/* Adjust based on your navbar height. Assuming ~80px */
+/* Hero Section */
 .hero {
-  background-color: #1f7a1f; /* Same green as navbar */
-  height: calc(100vh - 80px); /* Full screen height minus nav */
+  background-color: var(--brand-green);
+  height: calc(100vh - 80px);
   position: relative;
   overflow: hidden;
 }
 
-/* Text styling */
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
 .hero-text {
   margin-bottom: 4rem;
 }
+
 .hero h1 {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
@@ -150,72 +174,69 @@ body {
   color: #fff;
 }
 
-/* Buttons */
 .hero .btn-light {
-  color: #1f7a1f;
+  color: var(--brand-green);
   background-color: #fff;
   border: 2px solid #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .hero .btn-light:hover {
   background-color: #e8e8e8;
-  color: #1f7a1f;
+  color: var(--brand-green);
 }
+
 .hero .btn-outline-light {
   color: #fff;
   border: 2px solid #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .hero .btn-outline-light:hover {
   background-color: #fff;
-  color: #1f7a1f;
+  color: var(--brand-green);
 }
 
-/* Reviewed by */
-
+/* Reviewed By Section */
 .reviewed-by {
-  background-color: #f8f8f8; /* Same green as hero section */
+  background-color: #f8f8f8;
   overflow: hidden;
 }
 
 .review-logo {
-  max-width: 100%; /* Ensures the image doesn't exceed its container */
-  max-height: 80px; /* Increased size for better visibility */
-  width: auto; /* Maintains aspect ratio */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
   display: block;
-  margin: 0 auto; /* Centers the image */
-  object-fit: contain; /* Scales the image to fit within its container */
-  filter: drop-shadow(
-    0 1px 2px rgba(0, 0, 0, 0.2)
-  ); /* Subtle shadow for depth */
-  padding: 0; /* Remove any inherent padding */
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  padding: 0;
   opacity: 0.8;
   transition: transform 0.3s ease;
 }
 
 .review-logo:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.05);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .review-logo {
-    max-height: 70px; /* Slightly smaller on smaller screens */
+    max-height: 70px;
   }
 }
 
 /* Featured Menu Section */
 .featured-menu {
-  /* Diagonal split: 135 degrees, green on one side, bright orange on the other */
   background: linear-gradient(
     135deg,
     var(--brand-green) 50%,
     var(--complementary-orange) 50%
   );
   position: relative;
-  padding: 4rem 2rem; /* Adjust as needed */
-  color: #333; /* Text color */
+  padding: 4rem 2rem;
+  color: #333;
 }
 
 .featured-menu::before {
@@ -225,25 +246,20 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Semi-transparent overlay for better text readability */
-
   z-index: 1;
 }
 
-/* Ensure content is above the overlay */
 .featured-menu .container {
   position: relative;
   z-index: 2;
 }
 
-/* Section Title */
 .featured-menu .section-title {
-  color: white; /* Updated to match the orange side */
+  color: white;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhances readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Featured Card Styling */
 .featured-card {
   overflow: hidden;
   border-radius: 15px;
@@ -256,7 +272,6 @@ body {
   box-shadow: 0 12px 24px rgba(31, 122, 31, 0.3);
 }
 
-/* Featured Image Styling */
 .featured-img {
   height: 410px;
   object-fit: cover;
@@ -267,7 +282,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Card Overlay Styling */
 .card-overlay {
   position: absolute;
   bottom: 0;
@@ -284,20 +298,19 @@ body {
   opacity: 1;
 }
 
-/* Typography within Cards */
 .card-title {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .card-text {
   font-family: "Quicksand", sans-serif;
   font-size: 1rem;
   margin-bottom: 0.75rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .price {
@@ -305,45 +318,14 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--complementary-orange);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
-}
-
-/* Button Styling */
-.featured-menu .btn-primary {
-  background-color: var(--brand-green);
-  color: var(--button-text-white); /* Ensure white text */
-  border: none;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .featured-menu .btn-primary:hover {
-  background-color: var(
-    --button-text-white
-  ); /* Slightly darker orange on hover */
+  background-color: var(--button-text-white);
   color: var(--brand-green);
 }
 
-.btn-accent {
-  background-color: var(--accent-yellow);
-  color: var(--button-text-dark); /* Change text color for better contrast */
-  border: none;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Enhance readability */
-}
-
-.btn-accent:hover {
-  background-color: #e6b800; /* Slightly darker yellow on hover */
-  color: var(--button-text-dark); /* Maintain dark text */
-}
-
-/* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .section-title {
     font-size: 1.75rem;
@@ -365,7 +347,6 @@ body {
     font-size: 1rem;
   }
 
-  /* Adjust featured-menu background for smaller screens */
   .featured-menu {
     background: linear-gradient(
       135deg,
@@ -397,7 +378,6 @@ body {
     font-size: 0.95rem;
   }
 
-  /* Further adjust featured-menu background for extra small screens */
   .featured-menu {
     background: linear-gradient(
       135deg,
@@ -409,10 +389,10 @@ body {
 }
 
 /* Locations Section */
-/* Locations Section */
+
 .locations-section {
-  background-color: #f8f8f8; /* Green background */
-  color: #fff; /* White text for contrast */
+  background-color: #f8f8f8;
+  color: #fff;
 }
 
 .locations-section .section-title {
@@ -468,7 +448,7 @@ body {
   color: var(--brand-green);
 }
 
-/* Map Styling */
+/* Map */
 .map-container iframe {
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -478,12 +458,9 @@ body {
   transform: scale(1.02);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .locations-section {
-    background-color: var(
-      --complementary-orange
-    ); /* Orange background on small screens */
+    background-color: var(--complementary-orange);
   }
 
   .locations-section .section-title::after {
@@ -491,7 +468,7 @@ body {
   }
 
   .location-details {
-    background-color: rgba(31, 122, 31, 0.9); /* Semi-transparent green */
+    background-color: rgba(31, 122, 31, 0.9);
   }
 
   .location-title {
@@ -507,9 +484,11 @@ body {
   }
 }
 
+/* Contact Section */
+
 .contact-section {
   display: flex;
-  align-items: stretch; /* Ensures both columns stretch equally */
+  align-items: stretch;
   background: var(--brand-green);
 }
 
@@ -530,7 +509,6 @@ body {
   border-radius: 2px;
 }
 
-/* Contact Info Styling (Orange Side) */
 .contact-info {
   background-color: var(--complementary-orange);
   border-radius: 0 10px 10px 0;
@@ -542,6 +520,7 @@ body {
 .contact-info:hover {
   transform: translateY(-5px);
 }
+
 .contact-info h4 {
   color: var(--brand-green);
   margin-bottom: 2rem;
@@ -565,7 +544,6 @@ body {
   color: var(--accent-yellow);
 }
 
-/* Contact Form Styling (Green Side) */
 .contact-form-container {
   background-color: transparent;
   border-radius: 10px 0 0 10px;
@@ -614,17 +592,6 @@ body {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Thank You Message Styling */
-.thank-you-message {
-  border-radius: 10px;
-  font-size: 1rem;
-  background-color: #d4edda; /* Light green background */
-  color: #155724; /* Dark green text */
-  padding: 1rem;
-  border: 1px solid #c3e6cb;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .contact-section {
     flex-direction: column;
@@ -659,154 +626,28 @@ body {
   }
 }
 
-/* Footer Styles */
-/* Navbar background: Patsy's green */
-.footer {
-  background-color: var(--complementary-orange); /* Changed to orange */
-  color: #fff;
+.thank-you-message {
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border: 1px solid #c3e6cb;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: var(--brand-green); /* Changed to brand green on hover for contrast */
-}
-
-.footer span:hover {
-  color: var(--brand-green);
-  transition: all 0.3s ease;
-}
-
-.footer h5 {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.footer ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* Social Media Icons */
-.footer .social-icons a {
-  color: #fff;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer .social-icons a:hover {
-  color: var(--brand-green);
-  transform: scale(1.1);
-}
-
-/* Ensure consistent icon spacing */
-.footer .social-icons a {
-  margin-right: 1rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 767.98px) {
-  .footer .row {
-    text-align: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .footer .col-md-4,
-  .footer .col-md-3,
-  .footer .col-md-2 {
-    margin-bottom: 2rem;
-  }
-
-  /* Adjust icon alignment on smaller screens */
-  .footer .social-icons {
-    justify-content: center;
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 576px) {
-  .footer h5 {
-    font-size: 1.25rem;
-  }
-
-  .footer p,
-  .footer li,
-  .footer a {
-    font-size: 0.9rem;
-  }
-
-  /* Adjust icon spacing on very small screens */
-  .footer .social-icons a {
-    margin-right: 0.75rem;
-  }
-}
-
-/* Responsive Logo Sizing */
-@media (max-width: 992px) {
-  /* Medium devices (tablets, 768px and up) */
-  .footer .logo-stamp {
-    width: 80px;
-    height: 80px;
-  }
-
-  .footer .brand-text {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Specifically targeting iPads and similar devices */
-  .footer .logo-stamp {
-    width: 70px;
-    height: 70px;
-  }
-
-  .footer .brand-text {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 576px) {
-  /* Small devices (phones, less than 576px) */
-  .footer .logo-stamp {
-    width: 60px;
-    height: 60px;
-  }
-
-  .footer .brand-text {
-    font-size: 1.25rem;
-  }
-}
-
-/* Optional: Adjust padding for the logo in the footer */
-.footer .navbar-brand,
-.footer .navbar-brand .logo-stamp {
-  padding: 0;
-  margin: 0;
-}
-
-
-/* Hero Section for About Us Page */
-
-/* Hero Content Positioning */
-.hero .container {
-  position: relative;
-  z-index: 3; /* Above the overlay */
-}
-
-/* Video Background */
-.video-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 1;
+#formErrorMessage {
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 /* Our Story Section */
@@ -836,7 +677,7 @@ body {
   line-height: 1.6;
 }
 
-/* Our Values and Commitments Section */
+/* Our Values Section */
 .our-values {
   background-color: #f8f8f8;
 }
@@ -902,7 +743,7 @@ body {
 }
 
 .carousel-item {
-  padding: 0 15px; /* Adjust padding as needed */
+  padding: 0 15px;
 }
 
 .carousel-item .col-lg-4 {
@@ -921,9 +762,8 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Optional: Adjust carousel indicators position and appearance */
 .carousel-indicators {
-  bottom: -40px; /* Position indicators below the carousel */
+  bottom: -40px;
 }
 
 .carousel-indicators button {
@@ -937,170 +777,157 @@ body {
   background-color: var(--accent-yellow);
 }
 
-/* Adjust carousel controls size */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-size: 50px 50px;
 }
 
-/* Ensure images are responsive and centered */
 .carousel-item img {
   max-height: 300px;
   object-fit: cover;
 }
 
+/* Menu Categories Tabs */
 
-
-
-
-
-/* Menu Categories Tabs Styles */
 .menu-categories {
-    background-color: var(--complementary-orange); /* Applying the defined orange */
-    padding: 3rem 2rem; /* Adjusted padding for spacing */
+  background-color: var(--complementary-orange);
+  padding: 3rem 2rem;
 }
 
-.menu-categories h2{
+.menu-categories h2 {
   color: var(--brand-green);
 }
 
 .menu-categories .nav-tabs .nav-link {
-    color: #fff; /* White text for contrast on orange background */
-    font-weight: 600;
-    border: none;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .menu-categories .nav-tabs .nav-link:hover {
-    color: var(--brand-green); /* Change to accent yellow on hover */
+  color: var(--brand-green);
 }
 
 .menu-categories .nav-tabs .nav-link.active {
-    color: var(--brand-dark-green); /* Set active tab text to gold */
+  color: var(--brand-dark-green);
 }
 
 .menu-categories .tab-content {
-    margin-top: 2rem; /* Adjust as needed */
+  margin-top: 2rem;
 }
 
-.menu-categories .tab-content .row  {
-    padding: 1.5rem;
-    background-color: transparent; /* White background for menu items */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.menu-categories .tab-content .row {
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-categories .tab-content .row > div:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .menu-item h5 {
-    font-size: 1.25rem;
-    color: var(--brand-green); /* Ensure h5 has proper color */
-    margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--brand-green);
+  margin-bottom: 0.5rem;
 }
 
 .menu-item .price {
-    color: var(--brand-green); /* Changing price color to brand green */
-    font-weight: bold; /* Making the price text bold for emphasis */
+  color: var(--brand-green);
+  font-weight: bold;
 }
 
 .menu-item .description {
-    margin-bottom: 0.5rem;
-    color: #000;
+  margin-bottom: 0.5rem;
+  color: #000;
 }
 
 .menu-item ul.toppings,
 .menu-item ul.add-protein {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    color: #000;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #000;
 }
 
 .menu-item ul.toppings li,
 .menu-item ul.add-protein li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Separator Line */
 .menu-item .d-flex {
-    border-bottom: 2px solid var(--brand-green); /* Green line */
-    padding-bottom: 0.75rem; /* Space below */
-    margin-bottom: 0.75rem; /* Space above */
+  border-bottom: 2px solid var(--brand-green);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Reservations CTA Section Styles */
+/* Reservations CTA Section */
 .reservations-cta {
-    background-color: var(--brand-green); /* Set to brand green */
-    color: var(--button-text-white); /* Ensure text is readable */
-
+  background-color: var(--brand-green);
+  color: var(--button-text-white);
 }
 
 .reservations-cta h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .reservations-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-.reservations-cta .btn{
-  transition: all 300ms ease;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
+.reservations-cta .btn {
+  transition: all 300ms ease;
+}
 
 .reservations-cta .btn:hover {
-  transition: all 300ms ease;
-    background-color: var(--button-text-white);
-    color: var(--brand-green);
-    transform: scale(1.05);
+  background-color: var(--button-text-white);
+  color: var(--brand-green);
+  transform: scale(1.05);
 }
 
-
-/* Responsive Adjustments */
-
 @media (max-width: 767.98px) {
-    .menu-categories .tab-content .row > div {
-        padding: 1rem;
-    }
+  .menu-categories .tab-content .row > div {
+    padding: 1rem;
+  }
 
-    .reservations-cta {
-        padding: 2rem 1rem;
-    }
+  .reservations-cta {
+    padding: 2rem 1rem;
+  }
 
-    .menu-categories {
-        padding-bottom: 2rem; /* Reduce bottom padding */
-    }
+  .menu-categories {
+    padding-bottom: 2rem;
+  }
 }
 
 @media (max-width: 576px) {
-    .menu-categories .tab-content .row > div {
-        padding: 0.75rem;
-    }
+  .menu-categories .tab-content .row > div {
+    padding: 0.75rem;
+  }
 
-    /* Further adjust menu section padding if needed */
-    .menu-categories {
-        padding: 2rem 1rem;
-    }
+  .menu-categories {
+    padding: 2rem 1rem;
+  }
 }
 
-/* reservations */
+/* Reservation Form Styles */
 .form-control:focus {
   border-color: var(--complementary-orange);
   box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
 }
 
 .reservation-form {
-  background-color: #f8f8f8; /* Light gray background */
+  background-color: #f8f8f8;
 }
 
 .reservation-form .section-title {
   color: var(--brand-green);
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   margin-bottom: 3rem;
   position: relative;
@@ -1116,7 +943,6 @@ body {
   border-radius: 2px;
 }
 
-/* Reservation Form Styling */
 #reservationForm {
   background-color: #fff;
   padding: 2rem;
@@ -1131,7 +957,7 @@ body {
 }
 
 #reservationForm .form-label {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   color: var(--brand-green);
 }
@@ -1140,7 +966,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.75rem;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 #reservationForm .form-control:focus {
@@ -1152,42 +978,14 @@ body {
   width: 100%;
 }
 
-
-
-/* Thank You Message Styling */
-.thank-you-message {
-  border-radius: 10px;
-  font-size: 1rem;
-  background-color: #d4edda; /* Light green background */
-  color: #155724; /* Dark green text */
-  padding: 1rem;
-  border: 1px solid #c3e6cb;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Error Message Styling */
-#formErrorMessage {
-  border-radius: 10px;
-  font-size: 1rem;
-}
-
-/* =========================
-   Reservation Policies Styles
-   ========================= */
-
 /* Reservation Policies Section */
 .reservation-policies {
-  background-color: #f8f8f8; /* Light gray background */
+  background-color: #f8f8f8;
 }
 
 .reservation-policies .section-title {
   color: var(--brand-green);
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   margin-bottom: 3rem;
   position: relative;
@@ -1210,11 +1008,11 @@ body {
 
 .policy-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .policy-card h4 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   color: var(--brand-dark-green);
 }
@@ -1224,34 +1022,116 @@ body {
 }
 
 .policy-card p {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #555;
 }
 
+/* Footer */
+.footer {
+  background-color: var(--complementary-orange);
+  color: #fff;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--brand-green);
+}
+
+.footer span:hover {
+  color: var(--brand-green);
+  transition: all 0.3s ease;
+}
+
+.footer h5 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--brand-green);
+  transform: scale(1.1);
+}
+
+.footer .social-icons a {
+  margin-right: 1rem;
+}
+
 @media (max-width: 767.98px) {
-  #reservationForm {
-    padding: 1.5rem;
+  .footer .row {
+    text-align: center;
   }
 
-  .reservation-form .section-title {
-    font-size: 1.75rem;
+  .footer .col-md-4,
+  .footer .col-md-3,
+  .footer .col-md-2 {
+    margin-bottom: 2rem;
   }
 
-  .thank-you-message, #formErrorMessage {
-    font-size: 0.95rem;
+  .footer .social-icons {
+    justify-content: center;
   }
 }
 
 @media (max-width: 576px) {
-  .reservation-form .section-title {
+  .footer h5 {
+    font-size: 1.25rem;
+  }
+
+  .footer p,
+  .footer li,
+  .footer a {
+    font-size: 0.9rem;
+  }
+
+  .footer .social-icons a {
+    margin-right: 0.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer .logo-stamp {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer .brand-text {
     font-size: 1.5rem;
   }
+}
 
-  #reservationForm {
-    padding: 1rem;
+@media (max-width: 768px) {
+  .footer .logo-stamp {
+    width: 70px;
+    height: 70px;
   }
 
-  .thank-you-message, #formErrorMessage {
-    font-size: 0.9rem;
+  .footer .brand-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .logo-stamp {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer .brand-text {
+    font-size: 1.25rem;
   }
 }

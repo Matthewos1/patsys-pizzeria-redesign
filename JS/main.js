@@ -1,7 +1,5 @@
-// JS/main.js
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Bootstrap tooltips
+  // Bootstrap tooltips
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
   );
@@ -9,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  // Handle Contact Form Submission (if exists)
+  // Contact Form Submission 
   const contactForm = document.getElementById("contactForm");
   const thankYouMessageContact = document.getElementById(
     "thankYouMessageContact"
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent default form submission
+      event.preventDefault(); 
 
       const formData = new FormData(contactForm);
       const formProps = Object.fromEntries(formData);
@@ -38,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
               setTimeout(() => {
                 thankYouMessageContact.classList.remove("d-block");
                 thankYouMessageContact.classList.add("d-none");
-              }, 5000); // Hide message after 5 seconds
+              }, 5000); 
             }
           } else {
             response.json().then((data) => {
@@ -58,24 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Handle Reservation Form Submission
+  // Reservation Form Submission
   const reservationForm = document.getElementById("reservationForm");
   const thankYouMessageReservation = document.getElementById("thankYouMessage");
   const formErrorMessage = document.getElementById("formErrorMessage");
 
   if (reservationForm) {
     reservationForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent default form submission
+      event.preventDefault(); 
 
       const formData = new FormData(reservationForm);
       const formProps = Object.fromEntries(formData);
-
-      // Optional: Check Honeypot Field
-      if (formProps["bot-field"]) {
-        // Detected as spam
-        alert("Spam detected. Submission ignored.");
-        return;
-      }
 
       fetch(reservationForm.action, {
         method: "POST",
@@ -93,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
               setTimeout(() => {
                 thankYouMessageReservation.classList.remove("d-block");
                 thankYouMessageReservation.classList.add("d-none");
-              }, 5000); // Hide message after 5 seconds
+              }, 5000); 
             }
             if (formErrorMessage) {
               formErrorMessage.classList.add("d-none");
@@ -123,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initialize Lightbox for Gallery
+  // Lightbox for Gallery
   var lightboxLinks = document.querySelectorAll('[data-bs-toggle="lightbox"]');
   lightboxLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
@@ -133,21 +124,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Initialize Bootstrap Carousel if present
+  // bootstrap Carousel
   var galleryCarouselElement = document.getElementById("galleryCarousel");
   if (galleryCarouselElement) {
     var galleryCarousel = new bootstrap.Carousel(galleryCarouselElement, {
-      interval: 3000, // Slide every 3 seconds
+      interval: 3000,
       ride: "carousel",
       pause: "hover",
       wrap: true,
     });
 
-    // Get references to the custom control buttons
+    // custom control buttons for the carousel
     var prevButton = document.getElementById("carouselPrev");
     var nextButton = document.getElementById("carouselNext");
 
-    // Add event listeners to the custom control buttons
     if (prevButton) {
       prevButton.addEventListener("click", function () {
         galleryCarousel.prev();
