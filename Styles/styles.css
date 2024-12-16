@@ -111,6 +111,19 @@ body {
   color: var(--complementary-orange);
 }
 
+@media (max-width: 576px) {
+  /* Small devices (phones, less than 768px) */
+  .logo-stamp {
+    width: 100px;
+    height: 100px;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;
+  }
+}
+
+
 /* Hero section */
 /* Adjust based on your navbar height. Assuming ~80px */
 .hero {
